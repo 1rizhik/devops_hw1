@@ -18,6 +18,7 @@ models/*
 !models/.gitkeep
 !models/*.dvc
 !data/*.dvc
+!models/model.pkl
 
 # IDE
 .vscode/
