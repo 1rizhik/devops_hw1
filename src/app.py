@@ -7,12 +7,8 @@ from flask import Flask, jsonify, request
 
 
 MODEL_PATH = Path('models/model.pkl')
-FEATURE_NAMES = [
-    'sepal length (cm)',
-    'sepal width (cm)',
-    'petal length (cm)',
-    'petal width (cm)',
-]
+FEATURE_NAMES = ['variance', 'skewness', 'curtosis', 'entropy']
+
 
 app = Flask(__name__)
 

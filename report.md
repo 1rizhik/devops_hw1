@@ -9,16 +9,23 @@
 
 ## 2. Набор данных
 
-Iris (встроен в scikit-learn): 150 образцов, 3 класса, 4 признака.
-Разделение: 80% train (120), 20% test (30), stratify, random_state=42.
+**BankNote Authentication** (UCI ML Repository, dataset 267):
+- **1372 образца**
+- **4 признака:** variance, skewness, curtosis, entropy
+- **Целевая переменная:** class (0 — подлинная, 1 — поддельная)
+- **Задача:** бинарная классификация
+- **Разделение:** 80% train (1097), 20% test (275), stratify, random_state=42
+- **Источник:** `data/raw/BankNote_Authentication.csv`
 
 ## 3. Модель
 
 - Алгоритм: **RandomForestClassifier** (n_estimators=100, random_state=42)
 - Гиперпараметры в `config/config.ini`
 - Метрики на тесте:
-  - **Accuracy: 0.9000**
-  - **F1 weighted: 0.8997**
+  - **Accuracy: 0.9964**
+  - **F1: 0.9959**
+  - **Precision: 0.9919**
+  - **Recall: 1.0000**
 
 ## 4. API
 

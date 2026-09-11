@@ -19,6 +19,7 @@ models/*
 !models/*.dvc
 !data/*.dvc
 !models/model.pkl
+!data/raw/BankNote_Authentication.csv
 
 # IDE
 .vscode/

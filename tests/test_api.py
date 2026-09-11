@@ -1,4 +1,4 @@
-"""Тесты для API-сервиса модели."""
+"""Тесты для API-сервиса модели BankNote Authentication."""
 import pytest
 
 from src.app import app
@@ -18,7 +18,7 @@ def test_health(client):
 
 
 def test_predict_valid(client):
-    payload = {'features': [5.1, 3.5, 1.4, 0.2]}
+    payload = {'features': [2.3718, 7.4908, 0.015989, -1.7414]}
     response = client.post('/predict', json=payload)
     assert response.status_code == 200
     data = response.get_json()
@@ -26,13 +26,15 @@ def test_predict_valid(client):
     assert isinstance(data['prediction'], list)
 
 
-def test_predict_setosa(client):
-    payload = {'features': [5.1, 3.5, 1.4, 0.2]}
+def test_predict_authentic_banknote(client):
+    """Подлинная банкнота — класс 0."""
+    payload = {'features': [2.3718, 7.4908, 0.015989, -1.7414]}
     response = client.post('/predict', json=payload)
     assert response.get_json()['prediction'][0] == 0
 
 
-def test_predict_virginica(client):
-    payload = {'features': [6.3, 3.3, 6.0, 2.5]}
+def test_predict_fake_banknote(client):
+    """Поддельная банкнота — класс 1."""
+    payload = {'features': [-1.4446, 2.1438, -0.47241, -1.6677]}
     response = client.post('/predict', json=payload)
-    assert response.get_json()['prediction'][0] == 2
+    assert response.get_json()['prediction'][0] == 1
