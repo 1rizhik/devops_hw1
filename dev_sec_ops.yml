@@ -1,5 +1,5 @@
 image: 1rizhik/devops_hw1:latest
-image_signature: "sha256:6c1985d12c9635ae89986b129fff9a3ce760b41b7ed35d2d159d83b38f5de174"
+image_signature: "sha256:2f56501bddc28e6e249453cf706ffd7ea0b19a03dc231af952aa2c3c493447a8"
 test_coverage: "95%"
 
 dataset: "BankNote Authentication (UCI, 1372 rows, 4 features, binary classification)"
