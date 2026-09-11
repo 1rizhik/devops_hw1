@@ -58,7 +58,7 @@ pipeline {
             }
         }
 
-                stage('Functional test') {
+        stage('Functional test') {
             steps {
                 echo '=== Run functional tests ==='
                 sh '''
@@ -96,6 +96,7 @@ pipeline {
                 '''
             }
         }
+    }
 
     post {
         always {
