@@ -1,0 +1,43 @@
+{
+    "test_cases": [
+        {
+            "name": "Health check",
+            "endpoint": "/health",
+            "method": "GET",
+            "expected_status": 200,
+            "expected_body_contains": {
+                "status": "ok"
+            }
+        },
+        {
+            "name": "Predict setosa",
+            "endpoint": "/predict",
+            "method": "POST",
+            "payload": {
+                "features": [
+                    5.1,
+                    3.5,
+                    1.4,
+                    0.2
+                ]
+            },
+            "expected_status": 200,
+            "expected_prediction": 0
+        },
+        {
+            "name": "Predict virginica",
+            "endpoint": "/predict",
+            "method": "POST",
+            "payload": {
+                "features": [
+                    6.3,
+                    3.3,
+                    6.0,
+                    2.5
+                ]
+            },
+            "expected_status": 200,
+            "expected_prediction": 2
+        }
+    ]
+}
