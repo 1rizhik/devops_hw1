@@ -1,0 +1,15 @@
+image: 1rizhik/devops_hw1:latest
+image_signature: "sha256:6c1985d12c9635ae89986b129fff9a3ce760b41b7ed35d2d159d83b38f5de174"
+test_coverage: "95%"
+
+recent_commits:
+  - hash: "f6a98fd"
+    message: "Initialize DVC, track data and model"
+  - hash: "9ed241b"
+    message: "Add Flask API and tests"
+  - hash: "edb71e8"
+    message: "Add training script with RandomForest classifier"
+  - hash: "1e19842"
+    message: "Add data preparation script, config, gitattributes"
+  - hash: "cadba8c"
+    message: "Initial project structure"

@@ -16,6 +16,9 @@ models/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !models/.gitkeep
+!models/*.dvc
+!data/*.dvc
+!models/model.pkl
 
 # IDE
 .vscode/
@@ -27,3 +30,8 @@ Thumbs.db
 
 # Env
 .env
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/

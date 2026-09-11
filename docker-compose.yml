@@ -1,0 +1,15 @@
+services:
+  ml-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: 1rizhik/devops_hw1:latest
+    container_name: devops_hw1_api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./models:/app/models:ro
+      - ./config:/app/config:ro
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
