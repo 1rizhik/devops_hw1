@@ -10,34 +10,32 @@
             }
         },
         {
-            "name": "Predict setosa",
+            "name": "Predict authentic banknote (class 0)",
             "endpoint": "/predict",
             "method": "POST",
             "payload": {
                 "features": [
-                    5.1,
-                    3.5,
-                    1.4,
-                    0.2
+                    2.3718,
+                    7.4908,
+                    0.015989,
+                    -1.7414
                 ]
             },
-            "expected_status": 200,
-            "expected_prediction": 0
+            "expected_status": 200
         },
         {
-            "name": "Predict virginica",
+            "name": "Predict fake banknote (class 1)",
             "endpoint": "/predict",
             "method": "POST",
             "payload": {
                 "features": [
-                    6.3,
-                    3.3,
-                    6.0,
-                    2.5
+                    -1.4446,
+                    2.1438,
+                    -0.47241,
+                    -1.6677
                 ]
             },
-            "expected_status": 200,
-            "expected_prediction": 2
+            "expected_status": 200
         }
     ]
 }

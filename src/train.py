@@ -1,4 +1,4 @@
-"""Обучение ML-модели на подготовленных данных."""
+"""Обучение ML-модели на датасете BankNote Authentication."""
 import configparser
 import json
 import os
@@ -6,7 +6,7 @@ import pickle
 
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 
 def load_config(path: str = 'config/config.ini') -> configparser.ConfigParser:
@@ -38,17 +38,30 @@ def train_model() -> float:
 
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
-    f1 = f1_score(y_test, y_pred, average='weighted')
+    f1 = f1_score(y_test, y_pred, average='binary')
+    precision = precision_score(y_test, y_pred, average='binary')
+    recall = recall_score(y_test, y_pred, average='binary')
 
-    print(f'Accuracy: {accuracy:.4f}')
-    print(f'F1 (weighted): {f1:.4f}')
+    print(f'Accuracy:  {accuracy:.4f}')
+    print(f'F1:        {f1:.4f}')
+    print(f'Precision: {precision:.4f}')
+    print(f'Recall:    {recall:.4f}')
 
     os.makedirs('models', exist_ok=True)
     with open('models/model.pkl', 'wb') as f:
         pickle.dump(model, f)
 
     with open('metrics.json', 'w') as f:
-        json.dump({'accuracy': accuracy, 'f1_weighted': f1}, f, indent=2)
+        json.dump(
+            {
+                'accuracy': accuracy,
+                'f1': f1,
+                'precision': precision,
+                'recall': recall,
+            },
+            f,
+            indent=2,
+        )
 
     return accuracy
 
